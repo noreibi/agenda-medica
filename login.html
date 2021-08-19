@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script src="js/comun.js"></script>
+    <script src="js/login.js"></script>
+</head>
+
+<body>
+    <form action="nuevo.html" id='form-login'>
+        <div>
+            <input type="text" name="username">
+        </div>
+        <div>
+            <input type="password" placeholder="clave" name="password">
+        </div>
+        <input type="submit" value="Enviar">
+    </form>
+
+    <script>
+        InitSampleUser();
+        var UsuarioCorrecto = localStorage.getItem('UsuarioCorrecto')
+        var ClaveCorrecta = localStorage.getItem('ClaveCorrecta')
+        var formulario = document.getElementById('form-login')
+        formulario.addEventListener('submit', e => {
+            //Interrumpo envio de datos
+            e.preventDefault();
+            validateLogin(formulario);
+        })
+    </script>
+</body>
+
+</html>

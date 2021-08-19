@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nuevo</title>
+    <script src="js/comun.js"></script>
+</head>
+
+<body>
+    <form action="lista.html">
+        <div>
+            <select name="especialidad" id="especialidad">
+                <option>Especialidad</option>
+                <option value="Medicina Interna">Medicina Interna</option>
+                <option value="Otorrino">Otorrino</option>
+                <option value="Cirugia">Cirugía</option>
+                <option value="Pediatria">Pediatria</option>
+            </select>
+        </div>
+
+        <div>
+            <select name="medicos" id="medicos">
+                <option>Selecciona un Medico</option>
+                <option value="Juan Perez">Juan Perez</option>
+                <option value="Benito Perez">Benito Perez</option>
+                <option value="Lucas Falcon">Lucas Falcon</option>
+                <option value="Simon Gonzalez">Simon Gonzalez</option>
+                <option value="Juan Domingo">Juan Domingo</option>
+            </select>
+        </div>
+
+        <div>
+            <input type="date" id="fecha" /><input type="time" id="fecha" />
+        </div>
+        <hr />
+        <h4>Datos del Paciente</h4>
+        <div>
+            <input type="text" name="firstname" placeholder="Nombre">
+            <input type="text" name="lastname" placeholder="Apellido">
+        </div>
+        <div>
+            <input type="date" name="fecha-nacimiento">
+            <input type="text" name="edad" disabled> Años
+        </div>
+        <div>
+            <input type="text" name="localidad" placeholder="localidad">
+            <input type="text" name="telefono" placeholder="Telefono">
+        </div>
+        <div>
+            <input type="email" name="email" placeholder="email: example@example.com">
+        </div>
+        <div>
+            <input type="text" name="modoencontro" placeholder="¿Como nos encontró?">
+        </div>
+        <div>
+            <input type="text" name="modoencontro" placeholder="¿Como nos encontró?">
+        </div>
+        <div>
+            <label>El paciente cuenta con estudios Previos</label><br />
+            <input type="radio" id="si" name="estudios-previos" value="si">
+            <label for="si">Si</label>
+            <input type="radio" id="no" name="estudios-previos" value="no">
+            <label for="no">No</label>
+        </div>
+        <div>
+            <textarea cols="50" rows="8"> Lorem Ipsum</textarea>
+        </div>
+        <div>
+            <button>Cancelar</button>
+            <input type="submit" value="Guardar" />
+        </div>
+    </form>
+    <script>
+        SessionRedirect()
+    </script>
+</body>
+
+</html>
