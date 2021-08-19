@@ -22,6 +22,21 @@
     </div>
     <script>
         SessionRedirect()
+
+        var citasDiv = document.getElementById('citas')
+        var citasString = localStorage.getItem('citas', '[]')
+        var citasArray = JSON.parse(citasString) || []
+
+        citasArray.forEach(elemento => {
+            citasDiv.innerHTML = citasDiv.innerHTML + `
+            <div class="cita">
+                <div>${elemento.especialidad}</div>
+                <div>${elemento.medico}</div>
+                <div>${elemento.fecha}/${elemento.hora}</div>
+                <div>${elemento.firstname} ${elemento.lastname}</div>
+            </div>
+            `
+        })
     </script>
 </body>
 

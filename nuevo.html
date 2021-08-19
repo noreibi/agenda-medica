@@ -7,11 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>nuevo</title>
     <script src="js/comun.js"></script>
+    <script src="js/nueva-cita.js"></script>
 </head>
 
 <body>
-    <form action="lista.html">
+    <form action="lista.html" id="nueva-cita">
         <div>
+            <label id="especialidad-label-error"></label><br />
             <select name="especialidad" id="especialidad">
                 <option>Especialidad</option>
                 <option value="Medicina Interna">Medicina Interna</option>
@@ -22,6 +24,7 @@
         </div>
 
         <div>
+            <label id="medicos-label-error"></label><br />
             <select name="medicos" id="medicos">
                 <option>Selecciona un Medico</option>
                 <option value="Juan Perez">Juan Perez</option>
@@ -33,40 +36,46 @@
         </div>
 
         <div>
-            <input type="date" id="fecha" /><input type="time" id="fecha" />
+            <label id="fecha-label-error"></label><br />
+            <input type="date" id="fecha" name="fecha" />
+            <input type="time" id="hora" name="hora" />
         </div>
         <hr />
         <h4>Datos del Paciente</h4>
         <div>
+            <label id="firstname-label-error"></label><br />
             <input type="text" name="firstname" placeholder="Nombre">
             <input type="text" name="lastname" placeholder="Apellido">
         </div>
         <div>
+            <label id="fecha-nacimiento-label-error"></label><br />
             <input type="date" name="fecha-nacimiento">
             <input type="text" name="edad" disabled> Años
         </div>
         <div>
+            <label id="localidad-label-error"></label><br />
             <input type="text" name="localidad" placeholder="localidad">
             <input type="text" name="telefono" placeholder="Telefono">
         </div>
         <div>
+            <label id="email-label-error"></label><br />
             <input type="email" name="email" placeholder="email: example@example.com">
         </div>
         <div>
             <input type="text" name="modoencontro" placeholder="¿Como nos encontró?">
         </div>
         <div>
-            <input type="text" name="modoencontro" placeholder="¿Como nos encontró?">
-        </div>
-        <div>
             <label>El paciente cuenta con estudios Previos</label><br />
+
+            <label id="estudios-previos-label-error"></label><br />
             <input type="radio" id="si" name="estudios-previos" value="si">
             <label for="si">Si</label>
             <input type="radio" id="no" name="estudios-previos" value="no">
             <label for="no">No</label>
         </div>
         <div>
-            <textarea cols="50" rows="8"> Lorem Ipsum</textarea>
+            <label>Observacion</label><br />
+            <textarea cols="50" rows="8" name="observacion"> Lorem Ipsum</textarea>
         </div>
         <div>
             <button>Cancelar</button>
@@ -75,6 +84,12 @@
     </form>
     <script>
         SessionRedirect()
+        var formulario = document.getElementById('nueva-cita')
+        formulario.addEventListener('submit', e => {
+            //Interrumpo envio de datos
+            e.preventDefault();
+            validateNuevaCita(formulario)
+        })
     </script>
 </body>
 
