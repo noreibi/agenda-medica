@@ -1,0 +1,41 @@
+#nuevo{
+    width: 2rem;
+    height: 2rem;
+    text-align: center;
+    color: white;
+    background-color: yellowgreen;
+    text-decoration: none;
+    cursor: pointer;
+    display: flex;
+    font-size: 28px;
+    justify-content: center;
+    border-radius: 50%;
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+}
+
+#citas{
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    padding: 32px;;
+    min-height: 100vh;
+    .cita{
+        display: grid;
+        gap: 8px;
+        grid-template-columns: 1fr  1fr  1fr  1fr;
+        padding: 8px;
+        &.title{
+            background-color: rgba(8, 101, 187, 0.1);;
+        }
+        
+        &.child{
+            border-bottom:  00.5px solid rgb(216, 216, 216);
+            cursor: pointer;
+            &:hover{
+                background-color: rgba(8, 101, 187, 0.3);;
+            }
+        }
+    }
+}

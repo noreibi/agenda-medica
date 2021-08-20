@@ -1,0 +1,26 @@
+header{
+    background-color: white;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 2px 5px 5px 0px rgba(0,0,0,0.14);
+    margin-bottom: 5px;;
+    h1{
+        margin: 0px;
+    }
+    div{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        h4{
+            margin: 0px;
+        }
+        h4 + a {
+            margin-left: 18px;
+        }
+        a{
+
+        }
+    }
+}

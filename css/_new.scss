@@ -1,0 +1,33 @@
+#nueva-cita-container{
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    padding: 32px;;
+
+    form{
+        label.error{
+            color: red;
+        }
+        select{
+            padding: 8px;
+            min-width: 320px;
+        }
+        input[type=date]{
+            width: 160px;
+        }
+        input[type=time]{
+            margin-left: 46px;
+            width: 80px;
+        }
+        input[type=text], input[type=email]{
+            width: 320px;
+        }
+        input[type=text] + input[type=text] {
+            margin-left: 16px;
+        }
+        input[type=text], input[type=password], input[type=email], input[type=date], input[type=time]{
+            border-bottom: 1px solid rgb(8, 101, 187);;
+        }
+    }
+}

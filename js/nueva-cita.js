@@ -1,5 +1,4 @@
 function validateNuevaCita(formulario) {
-    console.log(formulario['especialidad'].value)
 
     var especialidad = validateField(formulario, 'especialidad', 'Especialidad', 'Debe Seleccionar una especialidad')
     var medico = validateField(formulario, 'medicos', 'Selecciona un Medico', 'Debe Seleccionar un Medico')
@@ -27,6 +26,7 @@ function validateNuevaCita(formulario) {
 
 
 function validateField(formulario, id, equalTo, messageError, idLabelError) {
+    console.log(id)
     if (
         formulario[id].value === equalTo
     ) {

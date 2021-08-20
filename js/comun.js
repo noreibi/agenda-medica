@@ -24,3 +24,20 @@ function SessionRedirect() {
         window.location.href = 'login.html'
     }
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+
+    try {
+        var salir = document.getElementById('exit')
+
+        salir.addEventListener('click', e => {
+
+            e.preventDefault();
+            localStorage.setItem('isLogged', 'false')
+            window.location.href = 'login.html'
+        })
+    } catch (error) {
+
+    }
+
+}, false);
