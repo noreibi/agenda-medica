@@ -41,13 +41,15 @@
 
         citasArray.forEach(elemento => {
             citasDiv.innerHTML = citasDiv.innerHTML + `
-            <div class="cita child">
+            <a href="edit.html?id=${elemento.id}">
+            <div class= "cita child" >
                 <div>${elemento.especialidad}</div>
                 <div>${elemento.medico}</div>
                 <div>${elemento.fecha}/${elemento.hora}</div>
                 <div>${elemento.firstname} ${elemento.lastname}</div>
             </div>
-            `
+            <a>
+                `
         })
     </script>
 </body>

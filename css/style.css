@@ -99,7 +99,7 @@
   margin-bottom: 32px;
 }
 
-input[type=submit], button {
+input[type=submit], button, a.button {
   margin-left: auto;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
@@ -116,11 +116,11 @@ input[type=submit], button {
   margin-top: 1rem;
 }
 
-input[type=submit]:hover, button:hover {
+input[type=submit]:hover, button:hover, a.button:hover {
   background-color: #0a4a85;
 }
 
-input[type=submit].cancelar, button.cancelar {
+input[type=submit].cancelar, button.cancelar, a.button.cancelar {
   background-color: #da2f09;
 }
 
@@ -215,6 +215,106 @@ header div h4 {
 
 header div h4 + a {
   margin-left: 18px;
+}
+
+#detail {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: calc(100vh - 74px);
+}
+
+#detail .card {
+  background-color: white;
+  width: 100%;
+  max-width: 600px;
+  height: 400px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  border-radius: 15px;
+  padding: 10px;
+}
+
+#detail .card .card-detalle {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#detail .card .card-detalle div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#detail .card .card-detalle div h3 {
+  padding-left: 10px;
+  padding-right: 10px;
+  font-weight: bold;
+}
+
+#detail .card .card-detalle div p {
+  padding-top: 4px;
+}
+
+#detail .card .card-content {
+  display: -ms-grid;
+  display: grid;
+  gap: 16px;
+  padding-left: 20px;
+}
+
+#detail .card .card-content div h3 {
+  display: inline;
+  font-weight: bold;
+}
+
+#detail .card .card-content div p {
+  display: inline;
+}
+
+#detail .card .card-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+}
+
+#detail .card .card-button a {
+  text-align: center;
+  margin: 0px 8px;
+}
+
+#detail .card .card-button a.button-red {
+  background-color: red;
 }
 
 * {

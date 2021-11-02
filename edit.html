@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nuevo</title>
+    <script src="js/comun.js"></script>
+    <script src="js/nueva-cita.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h1>Logo</h1>
+
+        <div>
+            <h4>Admin</h4>
+            <a id="exit">salir</a>
+        </div>
+    </header>
+    <div id="nueva-cita-container">
+        <form action="lista.html" id="nueva-cita">
+            <h1>Nueva Cita</h1>
+            <h3>Datos de la cita</h3>
+            <div>
+                <label id="especialidad-label-error" class="error"></label><br />
+                <select name="especialidad" id="especialidad">
+                    <option>Especialidad</option>
+                    <option value="Medicina Interna">Medicina Interna</option>
+                    <option value="Otorrino">Otorrino</option>
+                    <option value="Cirugia">Cirugía</option>
+                    <option value="Pediatria">Pediatria</option>
+                </select>
+            </div>
+
+            <div>
+                <label id="medicos-label-error" class="error"></label><br />
+                <select name="medicos" id="medicos">
+                    <option>Selecciona un Medico</option>
+                    <option value="Juan Perez">Juan Perez</option>
+                    <option value="Benito Perez">Benito Perez</option>
+                    <option value="Lucas Falcon">Lucas Falcon</option>
+                    <option value="Simon Gonzalez">Simon Gonzalez</option>
+                    <option value="Juan Domingo">Juan Domingo</option>
+                </select>
+            </div>
+
+            <div>
+                <label id="fecha-label-error" class="error"></label><br />
+                <input type="date" id="fecha" name="fecha" />
+                <input type="time" id="hora" name="hora" />
+            </div>
+            <br />
+            <h3>Datos del Paciente</h3>
+            <div>
+                <label id="firstname-label-error" class="error"></label><br />
+                <input type="text" name="firstname" placeholder="Nombre" id="firstname">
+                <input type="text" name="lastname" placeholder="Apellido" id="lastname">
+            </div>
+            <div>
+                <label id="fecha-nacimiento-label-error" class="error"></label><br />
+                <input type="date" name="fecha-nacimiento" id="fechaNacimiento">
+
+            </div>
+            <div>
+                <label id="localidad-label-error" class="error"></label><br />
+                <input type="text" name="localidad" placeholder="localidad">
+                <input type="text" name="telefono" placeholder="Telefono">
+            </div>
+            <div>
+                <label id="email-label-error" class="error"></label><br />
+                <input type="email" name="email" placeholder="email: example@example.com" id="email">
+            </div>
+            <div>
+                <label id="modoencontro-label-error" class="error"></label><br />
+                <input type="text" name="modoencontro" placeholder="¿Como nos encontró?" id="modoencontro">
+            </div>
+            <div>
+                <label class="error"></label><br />
+                <label>El paciente cuenta con estudios Previos</label><br />
+
+                <label id="estudios-previos-label-error" class="error"></label><br />
+                <input type="radio" id="si" name="estudios-previos" value="si">
+                <label for="si">Si</label>
+                <input type="radio" id="no" name="estudios-previos" value="no">
+                <label for="no">No</label>
+            </div>
+            <div>
+                <label class="error"></label><br />
+                <label>Observacion</label><br />
+                <textarea cols="50" rows="8" name="observacion" id="observacion"> Lorem Ipsum</textarea>
+            </div>
+            <div>
+                <button class="cancelar">Cancelar</button>
+                <input type="submit" value="Guardar" />
+            </div>
+        </form>
+    </div>
+
+    <script>
+        SessionRedirect()
+
+        var citasString = localStorage.getItem('citas')
+        var citasArray = JSON.parse(citasString) || []
+        //Obtener el id de la ruta del navegador   TAREA PENDIENTE
+        var el_id_que_esta_en_la_url = 1630063215.411
+        var lacitaquequiero = citasArray.filter(e => {
+            console.log(e)
+            return e.id === el_id_que_esta_en_la_url
+        })
+        var lacita = lacitaquequiero[0]
+        document.getElementById('especialidad').value = lacita.especialidad
+        document.getElementById('medicos').value = lacita.medico
+        document.getElementById('fecha').value = lacita.fecha
+        document.getElementById('hora').value = lacita.hora
+        document.getElementById('firstname').value = lacita.firstname
+        document.getElementById('lastname').value = lacita.lastname
+        document.getElementById('fechaNacimiento').value = lacita.fechaNacimiento
+        document.getElementById('localidad').value = lacita.localidad
+        document.getElementById('telefono').value = lacita.telefono
+        document.getElementById('email').value = lacita.email
+        document.getElementById('modoencontro').value = lacita.modoContacto
+        document.getElementById('observacion').innerHTML = lacita.observacion
+
+        var formulario = document.getElementById('nueva-cita')
+        formulario.addEventListener('submit', e => {
+            //Interrumpo envio de datos
+            e.preventDefault();
+            validateNuevaCita(formulario)
+        })
+    </script>
+</body>
+
+</html>

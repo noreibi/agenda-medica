@@ -42,6 +42,7 @@ function validateField(formulario, id, equalTo, messageError, idLabelError) {
 
 function createCitaObject(formulario) {
     return {
+        id: new Date().getTime() / 1000,
         especialidad: formulario['especialidad'].value,
         medico: formulario['medicos'].value,
         fecha: formulario['fecha'].value,
@@ -59,7 +60,11 @@ function createCitaObject(formulario) {
 }
 
 function createCita(cita) {
-    var citasString = localStorage.getItem('citas', '[]')
+    //Obtener la llave, en este caso es citas
+    var citasString = localStorage.getItem('citas')
+    //citasString debería tener un arreglo ... en este caso un arreglo de objetos {} o vacìo
+    //Pero si no consigue nada debería ser null, entonces le doy un arreglo en limpio
+    //para que pueda hacer push
     var citasArray = JSON.parse(citasString) || []
     citasArray.push(cita)
     localStorage.setItem('citas', JSON.stringify(citasArray))

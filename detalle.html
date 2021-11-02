@@ -14,8 +14,63 @@
 </head>
 
 <body>
+    <header>
+        <h1>Logo</h1>
+
+        <div>
+            <h4>Admin</h4>
+            <a id="exit">salir</a>
+        </div>
+    </header>
+    <main id="detail">
+        <div class="card">
+            <div class="card-detalle">
+                <div>
+                    <h3>Num Ficha:</h3>
+                    <p>001</p>
+                </div>
+                <div>
+                    <h3>Fecha Reg.</h3>
+                    <p>12/08/21</p>
+                </div>
+            </div>
+            <div class="card-content">
+                <div>
+                    <h3>Hola :</h3>
+                    <p>Lorem Ipsum is simply dummy text.</p>
+                </div>
+                <div>
+                    <h3>Hola :</h3>
+                    <p>Lorem Ipsum is simply dummy text.</p>
+                </div>
+                <div>
+                    <h3>Hola :</h3>
+                    <p>Lorem Ipsum is simply dummy text.</p>
+                </div>
+                <div>
+                    <h3>Hola :</h3>
+                    <p>Lorem Ipsum is simply dummy text.</p>
+                </div>
+                <div>
+                    <h3>Hola :</h3>
+                    <p>Lorem Ipsum is simply dummy text.</p>
+                </div>
+            </div>
+            <div class="card-button">
+                <a class="button button-red">Cerrar</a>
+                <a class="button">Editar</a>
+            </div>
+
+        </div>
+    </main>
+
     <script>
         SessionRedirect()
+
+        var citasString = localStorage.getItem('citas', '[]')
+        var citasArray = JSON.parse(citasString) || []
+
+        /* citasArray.filter(elemento => elemento.id ===  )*/
     </script>
 </body>
 
